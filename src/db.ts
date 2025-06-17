@@ -3,7 +3,7 @@ import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
 import path from 'path';
 
-// Open DB connection
+// Function to initialize our databank
 export const initDB = async () => {
   const db = await open({
     filename: path.join(__dirname, 'database.sqlite'),
@@ -12,16 +12,18 @@ export const initDB = async () => {
 
   // Create users table if it doesn't exist
   await db.exec(`
+    
+
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
-      email TEXT NOT NULL UNIQUE
+      email TEXT NOT NULL UNIQUE,
+      password TEXT NOT NULL
     )
   `);
-
-    await db.run(`INSERT INTO users (name, email) VALUES (?, ?)`, ['Alice', 'alice@example.com']);
-    await db.run(`INSERT INTO users (name, email) VALUES (?, ?)`, ['Bob', 'bob@example.com']);
-    await db.run(`INSERT INTO users (name, email) VALUES (?, ?)`, ['Charlie', 'charlie@example.com']);
+    // seeds our users table with three users
+    await db.run(`INSERT INTO users (email, password) VALUES (?, ?)`, ['alice@example.com', '1234']);
+    await db.run(`INSERT INTO users (email, password) VALUES (?, ?)`, ['bob@example.com','2414']);
+    await db.run(`INSERT INTO users (email, password) VALUES (?, ?)`, ['charlie@example.com', '4142']);
 
   return db;
 };
