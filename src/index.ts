@@ -25,6 +25,11 @@ initDB().then((db) => {
     res.json(users);
   });
 
+  app.get('/products', async (req, res) => {
+    const products_found = await db.all('SELECT * FROM products');
+    res.json(products_found);
+  })
+
   app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
   });
