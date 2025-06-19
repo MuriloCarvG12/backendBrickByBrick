@@ -1,6 +1,9 @@
 // src/index.ts
 import express from 'express';
 import { initDB } from './db';
+import UserRoutes from './routes/users';
+import productsRoutes from './routes/products';
+
 
 const app = express();
 const port = 3000;
@@ -9,23 +12,13 @@ app.use(express.json());
 
 initDB().then((db) => {
   // Create User
-  app.post('/users', async (req, res) => {
-    const { name, email } = req.body;
-    try {
-      const result = await db.run('INSERT INTO users (name, email) VALUES (?, ?)', [name, email]);
-      res.status(201).json({ id: result.lastID, name, email });
-    } catch (err) {
-      res.status(400).json({ error: 'Failed to insert user', detail: err });
-    }
-  });
+  app.use('/', UserRoutes(db));
+  app.use('/', productsRoutes(db))
 
-  // Get All Users
-  app.get('/users', async (req, res) => {
-    const users = await db.all('SELECT * FROM users');
-    res.json(users);
-  });
 
   app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running users routes at http://localhost:${port}/users`);
+    console.log(`Server running products routes at http://localhost:${port}/products`);
   });
 });
