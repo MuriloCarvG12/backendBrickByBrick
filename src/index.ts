@@ -18,5 +18,7 @@ initDB().then((db) => {
 
   app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running users routes at http://localhost:${port}/users`);
+    console.log(`Server running products routes at http://localhost:${port}/products`);
   });
 });
