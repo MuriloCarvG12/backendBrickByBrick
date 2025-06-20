@@ -11,8 +11,9 @@ function productsRoutes(db: Database<sqlite3.Database, sqlite3.Statement>)
     const productsController = new ProductController(db)
 
     productRouter.get('/products', productsController.getProducts)
+    productRouter.get('/product/:name', productsController.getProduct)
     productRouter.post('/products', productsController.registerProduct)
-    
+
     return productRouter
 }
 

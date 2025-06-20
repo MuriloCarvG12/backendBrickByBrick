@@ -12,6 +12,8 @@ function UserRoutes(db: Database<sqlite3.Database, sqlite3.Statement>)
     
     userRouter.get('/users', users.getUsers);  
 
+    userRouter.get('/user/:email', users.getUser)
+
     userRouter.post('/users', users.registerUser)
 
     

@@ -18,8 +18,27 @@ export default class userController {
         {
             res.status(500).json("Error on fetching all users => " + error);
         }
-        
     };  
+
+    getUser =  async (req:Request, res:Response) => 
+    {
+        const user_email:string = req.params.email
+        try 
+        {
+            const user = await this.db.get(' SELECT id FROM users WHERE email = ? LIMIT 1;', [user_email]);
+            if(!user)
+                {
+                    res.status(404).json({error: 'Failed to find this user'});
+                }
+            res.status(200).json(user)
+
+        }
+        catch (err) 
+        {
+            res.status(500).json("Error on fetching user => " + err);
+        }
+    }
+
 
     registerUser = async (req:Request, res:Response) => 
     {
@@ -31,7 +50,7 @@ export default class userController {
         } 
         catch (err) 
         {
-            res.status(400).json({ error: 'Failed to insert user', detail: err });
+            res.status(500).json({ error: 'Failed to insert user', detail: err });
         }
     }
 }
