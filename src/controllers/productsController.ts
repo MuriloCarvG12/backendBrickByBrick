@@ -20,6 +20,25 @@ export default class ProductController {
         } 
     }
 
+    getProduct = async (req:Request, res:Response) => 
+    {
+        const product_name:string = req.params.name
+        try 
+        {
+            const product = await this.db.get(' SELECT * FROM products WHERE name = ? LIMIT 1;', [product_name]);
+            if(!product)
+                {
+                    res.status(404).json({error: 'Failed to find this product'});
+                }
+            res.status(200).json(product)
+
+        }
+        catch (err) 
+        {
+            res.status(500).json("Error on fetching user => " + err);
+        }
+    }
+
     registerProduct = async (req:Request, res:Response) => 
     {
         const product_info:product_req_body = req.body
