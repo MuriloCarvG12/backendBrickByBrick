@@ -1,0 +1,249 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+
+#container
+{
+    width: 100%;  
+    min-height: 100vh; 
+    background-color: #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.header
+{
+    background-color: #ffce1c;
+    width: 100%;
+    border-bottom-right-radius: 50px;
+   
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* estilizações para a pagina login */
+.page_body
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%; 
+    min-height: 700px; 
+    background-color: rgb(211, 211, 211);
+    margin: 0;
+    margin-bottom: 10%;
+    border-color: #ff7d03;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.form_body
+{
+    background-color: #ffffff;
+    width: 580px;
+    height: 100%;
+    border-top-width: 10px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    border-style: solid;
+    border-color: rgb(31, 31, 31);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    
+}
+
+.lego-button {
+    background-color: #ffce1c;
+    border: 4px solid #d89e00;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.lego-button:hover
+{
+    padding: 15px 25px;
+}
+
+.footer
+{
+    max-width: 100%;
+    background-color: #fdc094;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    border-radius: 20px;
+}
+/* estilizações para a pagina home */
+
+.lego_brick_body
+{
+    background-color: #ffce1c;
+    border: 4px solid #d89e00;
+    min-height: 105px;
+    min-width: 200px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    
+}
+
+.lego_brick_top
+{
+    min-width: 50px;
+    
+    height: 30px;
+    background-color: #ffce1c;
+    border: 4px solid #d89e00;
+    border-radius: 8px;
+}
+
+.store_products_display {
+    width: 80%;
+    height: 800px; 
+    background-color: aqua;
+    flex-grow: 1; 
+}
+
+.product_card {
+    background-color: #F6D7B0;
+    max-height: 600px;
+    max-width: 500px;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: center;
+    border: 4px solid #a0886b;
+    padding: 20px
+}
+
+
+
+.card_button
+{
+    background-color: #ffce1c;
+    border: 4px solid #d89e00;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.1s;
+    margin-bottom: 25px; 
+    font-family: 'Bricolage Grotesque'; 
+    font-weight: 400; 
+    font-size: 25px; 
+    width: 100%; 
+    height: 100%; 
+    margin-top: 20px; 
+    letter-spacing: 1px; 
+    color: #b48502
+}
+
+.card_button:hover
+{
+    padding: 15px 25px; 
+    background-color: #f7c30a;
+}
+
+/* estilizações para a pagina pagamento */
+.page_payment
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 700px;
+    background-image: url(./images/lego\ studs.png);
+    
+    background-size: 300px;
+    margin: 0;
+    margin-bottom: 10%;
+    padding: 14px;
+    gap: 24px;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #b95b03; 
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.purchase_input
+{
+    width: 100%;
+    height: 20px;  
+}
+
+.product_card_head
+{
+    min-height: 100px;
+    min-width: 500px; 
+    background-color: #ffce1c;
+    border: 4px solid #d89e00;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+    padding-top: 20px;
+
+}
+
+
+
+@media (max-width: 600px) {
+    h1,
+    h2,
+    label {
+      font-size: 18px !important;
+    }
+
+    .card_button {
+      font-size: 14px !important;
+      padding: 10px 12px;
+    }
+
+    .lego_brick_top {
+      width: 40px;
+    }
+
+   
+
+    .button-brick-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+
+  @media (max-width: 600px) {
+    #page_login_body {
+        flex-direction: column;
+    }
+
+    #form_body input {
+        width: 100%;
+    }
+}
