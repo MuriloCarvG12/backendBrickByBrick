@@ -27,6 +27,12 @@ initDB().then((db) => {
   app.get('/teste', (req, res) => {
     res.render('page_login.ejs');
   });
+  app.get('/teste2', (req, res) => {
+    res.render('page_home.ejs');
+  });
+  app.get('/teste3', (req, res) => {
+    res.render('page_pagamento.ejs');
+  });
 
 
   app.listen(port, () => {
