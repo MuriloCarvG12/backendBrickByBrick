@@ -20,7 +20,7 @@ function perform_login(event)
         }
     else
     {
-       location.href = "../pages/page_home.html"
+       location.href = "/home"
     }
     
 }
