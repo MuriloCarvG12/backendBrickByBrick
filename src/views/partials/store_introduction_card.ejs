@@ -1,0 +1,18 @@
+<%# This is the component for the lego blocks we see in the store history  %>
+
+<div style="flex: 1 1 300px; max-width: 100%; padding: 20px;"> 
+                    <!-- Div para simular encaixes de um bloco lego-->
+                    <div id="lego_brick_top" style="display: flex; flex-direction: row; width: 100%; justify-content: space-around; ">
+                        <div class="lego_brick_top" style="min-width: 100px; background-color: <%= cardColor %>; border-color: <%= cardBorder %>;"></div>
+                        <div class="lego_brick_top" style="min-width: 100px; background-color: <%= cardColor %>; border-color: <%= cardBorder %>;"></div>
+                    </div>
+                    <!-- Div para simular corpo de um bloco lego e inserir o conteudo-->
+                    <div class="lego_brick_body" style="background-color: <%= cardColor %>; border-color: <%= cardBorder %>">
+                        <div style="display:flex; flex-direction:column; gap: 30px; min-height: 300px;">
+                            <h2 style="font-family: Poppins; letter-spacing: 2px; color:<%= Font_Color %> "> <%= Special_Phrase  %></h2>
+                            <p style="font-family: Poppins; color:<%= Font_Color %>"><%= Card_Text  %></p>
+                            <p style="font-family: Poppins; color:<%= Font_Color %>"><%= Card_Text_Second_Line %></p>
+                        </div>                   
+                    </div>               
+            
+</div>

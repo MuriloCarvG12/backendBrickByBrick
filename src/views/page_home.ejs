@@ -28,72 +28,37 @@
             <!-- Conteudo para a div central da pagina home-->
 
             <!-- Introducao da loja -->
-            <div style="flex: 1 1 300px; max-width: 100%; padding: 20px;"> 
-                    <!-- Div para simular encaixes de um bloco lego-->
-                    <div id="lego_brick_top" style="display: flex; flex-direction: row; width: 100%; justify-content: space-around;">
-                        <div class="lego_brick_top" style="min-width: 100px;"></div>
-                        <div class="lego_brick_top" style="min-width: 100px;"></div>
-                    </div>
-                    <!-- Div para simular corpo de um bloco lego e inserir o conteudo-->
-                    <div class="lego_brick_body">
-                        <div style="display:flex; flex-direction:column; gap: 30px; min-height: 300px;">
-                            <h2 style="font-family: Poppins; letter-spacing: 2px; color:#976f02 ">O Mundo da Criatividade em Suas Mãos</h2>
-                            <p style="font-family: Poppins; color:#684c00">Na <strong>Brick by Brick</strong>, oferecemos uma variedade incrível de blocos de montar com a qualidade das melhores marcas do mercado.</p>
-                            <p style="font-family: Poppins; color:#684c00">Deixe sua imaginação voar e crie desde pequenas construções até verdadeiras cidades em miniatura!</p>
-                        </div>                   
-                    </div>               
-            </div>
+              <%- include('partials/store_introduction_card', {
+                  cardColor: '#F6D7B0',
+                cardBorder: '#a0886b',
+                Font_Color: '#684c00',
+                Special_Phrase: 'O Mundo da Criatividade em Suas Mãos',
+                Card_Text: 'Na Brick by Brick, oferecemos uma variedade incrível de blocos de montar com a qualidade das melhores marcas do mercado.',
+                Card_Text_Second_Line: 'Deixe sua imaginação voar e crie desde pequenas construções até verdadeiras cidades em miniatura!'
+            }) %>
+        
 
             <!-- Historia da loja -->
-            <div style="flex: 1 1 300px; max-width: 100%; padding: 20px;"> 
-                <!-- Div para simular encaixes de um bloco lego--> 
-                <div id="lego_brick_top" style="display: flex; flex-direction: row; width: 100%; justify-content: space-around;">
-                    <div class="lego_brick_top" style="background-color: #FF9CAB; border-color: #720000; min-width: 100px;"></div>
-                    <div class="lego_brick_top" style="background-color: #FF9CAB; border-color: #720000; min-width: 100px;"></div>
-                </div>
-                <!-- Div para simular corpo de um bloco lego e inserir o conteudo-->
-                <div class="lego_brick_body" style="background-color: #FF9CAB; border-color: #720000; min-height: 300px;">
-                    <div style="display:flex; flex-direction:column; gap: 20px;">
-                        <h2 style="font-family: Poppins; letter-spacing: 2px; color:#680c00">Nossa História</h2>
-                        <p style="font-family: Poppins; color:#680c00; font-size: 15px;">A <strong>Brick by Brick</strong> nasceu do amor por criatividade e inovação. Fundada  por entusiastas da construção, nossa missão sempre foi tornar a diversão acessível a todos.</p>
-                        <p style="font-family: Poppins; color:#680c00; font-size: 15px;">Começamos como uma pequena loja de bairro, e graças à paixão de nossos clientes, crescemos para nos tornar uma das principais lojas especializadas em blocos de montar.</p>
-                        <p style="font-family: Poppins; color:#680c00; font-size: 15px;">Hoje, oferecemos uma ampla variedade de produtos para todas as idades, incentivando a imaginação e o aprendizado através da construção.</p>
-                    </div>                  
-                </div>
-            </div>
+              <%- include('partials/store_introduction_card', {
+                  cardColor: '#FF9CAB',
+                cardBorder: '#720000',
+                Font_Color: '#680c00',
+                Special_Phrase: 'Nossa História',
+                Card_Text: 'A Brick by Brick nasceu do amor por criatividade e inovação. Fundada  por entusiastas da construção, nossa missão sempre foi tornar a diversão acessível a todos.',
+                Card_Text_Second_Line: 'Começamos como uma pequena loja de bairro, e graças à paixão de nossos clientes, crescemos para nos tornar uma das principais lojas especializadas em blocos de montar. Hoje, oferecemos uma ampla variedade de produtos para todas as idades, incentivando a imaginação e o aprendizado através da construção.'
+            }) %>
+            
 
             <!-- Tipos de produtos oferecidos pela loja -->
-            <div style="flex: 1 1 300px; max-width: 100%; padding: 20px;"> 
-                <!-- Div para simular encaixes de um bloco lego--> 
-                <div id="lego_brick_top" style="display: flex; flex-direction: row; width: 100%; justify-content: space-around;">
-                    <div class="lego_brick_top" style="background-color: #C7EFFE; border-color: #0055BF; min-width: 100px;"></div>
-                    <div class="lego_brick_top" style="background-color: #C7EFFE; border-color: #0055BF; min-width: 100px;"></div>
-                </div>
-                <!-- Div para simular corpo de um bloco lego e inserir o conteudo-->
-                <div class="lego_brick_body" style="background-color: #C7EFFE; border-color: #0055BF; min-height: 300px;">
-                    <div style="display:flex; flex-direction:column; gap: 10px;">
-                        <h2 style="font-family: Poppins; letter-spacing: 2px; color:#002468">Nossos Produtos</h2>
-                        
-                        <div class="product">
-                            
-                            <h3 style="font-family: Poppins; color:#002468">Blocos Clássicos</h3>
-                            <p style="font-family: Poppins; color:#002468">Um conjunto de blocos coloridos e versáteis para criar qualquer coisa que sua imaginação desejar.</p>
-                        </div>
-                        
-                        <div class="product">
-                            <h3 style="font-family: Poppins; color:#002468">Cidade Moderna</h3>
-                            <p style="font-family: Poppins; color:#002468">Construa uma cidade inteira com prédios, ruas e veículos detalhados.</p>
-                        </div>
-                        
-                        <div class="product">                           
-                            <h3 style="font-family: Poppins; color:#002468" >Espaço e Aventura</h3>
-                            <p style="font-family: Poppins; color:#002468">Explore o universo com naves espaciais, astronautas e planetas incríveis.</p>
-                        </div>
-                       
-                        
-                    </div>                  
-                </div>
-            </div>
+             <%- include('partials/store_introduction_card', {
+                  cardColor: ' #C7EFFE',
+                cardBorder: '#0055BF',
+                Font_Color: '#002468',
+                Special_Phrase: 'Nossos Produtos',
+                Card_Text: 'Blocos Clássicos: Um conjunto de blocos coloridos e versáteis para criar qualquer coisa que sua imaginação desejar. Cidade Moderna: Construa uma cidade inteira com prédios, ruas e veículos detalhados.',
+                Card_Text_Second_Line: 'Espaço e Aventura: Explore o universo com naves espaciais, astronautas e planetas incríveis.'
+            }) %>
+            
         </div>
 
         <!--- div container para a apresentação da loja-->
