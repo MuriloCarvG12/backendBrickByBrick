@@ -24,15 +24,24 @@ initDB().then((db) => {
   // Create User
   app.use('/', UserRoutes(db));
   app.use('/', productsRoutes(db))
+
   app.get('/login', (req, res) => {
     res.render('page_login.ejs');
   });
+
+  app.get('/register', (req,res) => {
+    res.render('page_register.ejs');
+  });
+
   app.get('/home', (req, res) => {
     res.render('page_home.ejs');
   });
+
   app.get('/payment', (req, res) => {
     res.render('page_pagamento.ejs');
   });
+
+  
 
 
   app.listen(port, () => {
