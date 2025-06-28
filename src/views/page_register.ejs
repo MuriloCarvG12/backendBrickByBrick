@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Brick By Brick</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="icon" type="image/x-icon" href="/images/logo.png">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&display=swap" rel="stylesheet">
+        
+    </head>
+<body>
+    <div id="container">
+
+        <%- include('./partials/header.ejs') %>
+
+        <!-- Header para o formulario de compras!-->
+        <%- include('./partials/page_register_header.ejs') %>
+
+        <form id="page_register" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Formulario para compras-->
+            <div class="page_payment" style="justify-content: space-evenly; width: 60%; flex-direction: column;" >
+
+                <div style="display: flex; flex-direction: column; margin-top: 40px; width: 30%">
+                    <label for="Nome" style="font-family: 'Poppins'; font-weight: 500; font-size: 20px;">Digite o seu email!</label>
+                    <input name="Nome" type="text" class="purchase_input" id="register-Email" placeholder="">
+                </div>
+
+                <div style="display: flex; flex-direction: column; width: 30%">
+                    <label for="Nome" style="font-family: 'Poppins'; font-weight: 500; font-size: 20px;">Digite a sua senha</label>
+                    <input name="Nome" type="text" class="purchase_input" id="register-Password" placeholder="">
+                </div>
+
+            </div>
+
+                <!-- Divs para o botao Comprar estilizados para parecer um bloco de lego-->
+                <%- include('./partials/register_button', {
+                        brickColor: '#AEEF97',
+                        brickBorderColor: '#27462B',
+                        TextColor: '#27462B',
+                        ButtonText: 'Criar Conta',
+                        buttonAction: 'submitForm'
+                }) %>
+                 
+            </div>
+
+        </form>
+
+        <!-- Divs para o botao Cancelar estilizados para parecer um bloco de lego-->
+        <%- include('./partials/register_button', {
+                        brickColor: '#FF9CAB',
+                        brickBorderColor: '#720000',
+                        TextColor: '#720000',
+                        ButtonText: 'Cancelar',
+                        buttonAction: 'back'
+        }) %>
+        
+
+        </div>
+    </div>
+    <div class="footer">
+        <h1 style="font-size: 20px;">Projeto - Brick By Brick</h1>
+    </div>
+
+
+    
+    <script type="module" src="/js/page_register.js"></script>
+    
+</body>
+
+
+</html>
