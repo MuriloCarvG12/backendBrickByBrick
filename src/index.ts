@@ -1,6 +1,5 @@
 // src/index.ts
 import express from 'express';
-
 import { initDB } from './db';
 import UserRoutes from './routes/users';
 import productsRoutes from './routes/products';
@@ -36,8 +35,17 @@ initDB().then((db) => {
     res.render('page_register.ejs');
   });
 
-  app.get('/home', (req, res) => {
-    res.render('page_home.ejs');
+  app.get('/home', async (req, res) => {
+    const product_fetch = await fetch("http://localhost:3000/products")
+    if(product_fetch)
+        {
+            
+            const products =  await product_fetch.json()
+            
+            res.render('page_home.ejs', {products: products});
+            
+        }
+    
   });
 
   app.get('/payment', (req, res) => {
