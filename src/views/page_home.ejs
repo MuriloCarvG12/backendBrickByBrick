@@ -62,7 +62,7 @@
          </div>
         <div id="store_products_display" class="page_body" style="gap: 30px; justify-content: space-around; border-color: #91c068; background-color: #D9F7BE; padding: 50px; min-width: none; width: 85%; max-width: 90%;">
 
-            <!-- Card para o Conjunto Casa de Passaros + Chalés Acouchegantes -->
+           
             <% products.forEach(function(product) { %> 
             <%- include('partials/product_card', {
                 brickColor: '#F6D7B0',
@@ -76,26 +76,7 @@
           
           
             
-            <!-- Card para o Conjunto biblioteca britanica -->
-             <%- include('partials/product_card', {
-                brickColor: '#f6e9b0',
-                brickBorder: '#cfc595',
-                cardColor: '#f6e9b0',
-                cardBorder: '#cfc595',
-                title: 'Conjunto Biblioteca Britanica',
-                image: '/images/set1.jpg'
-            }) %>
-           
-
-             <!-- Card para o Conjunto case moana e stich -->
-            <%- include('partials/product_card', {
-                brickColor: '#d3e2ff',
-                brickBorder: '#96b8fc',
-                cardColor: '#d3e2ff',
-                cardBorder: '#96b8fc',
-                title: 'Conjunto Casa Moana e Stitch',
-                image: '/images/set2.webp'
-            }) %>
+          
            
         
 
