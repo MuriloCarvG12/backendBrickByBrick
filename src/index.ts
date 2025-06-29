@@ -5,14 +5,17 @@ import { initDB } from './db';
 import UserRoutes from './routes/users';
 import productsRoutes from './routes/products';
 import path from 'path';
-
+import cors from "cors";
 
 const app = express();
+
 const port = 3000;
 
 
 
 app.use(express.json());
+app.use(cors());
+
 app.set('view engine', 'ejs')
 app.set('views', './src/views');
 // sets up the static paths for our project
@@ -50,3 +53,5 @@ initDB().then((db) => {
     console.log(`Server running products routes at http://localhost:${port}/products`);
   });
 });
+
+
