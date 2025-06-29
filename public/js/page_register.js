@@ -17,9 +17,9 @@ function register(event)
         }
     else
         {
-            document.getElementById("purchase-email").style.borderColor = 'black'
-            document.getElementById("purchase-email").style.borderStyle = 'solid'
-            document.getElementById("purchase-email").placeholder = ''
+            document.getElementById("register-Email").style.borderColor = 'black'
+            document.getElementById("register-Email").style.borderStyle = 'solid'
+            document.getElementById("register-Email").placeholder = ''
         }
 
     if(password == "")
@@ -37,6 +37,23 @@ function register(event)
 
     if(email && password  != "")
             {
-                alert("User cadastrado")
+                 fetch("/users", {
+                    method:  "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body:    JSON.stringify({ email, password })
+                })
+                    .then(res => {
+                    if (!res.ok) throw new Error(`Erro ${res.status}: ${res.statusText}`);
+                    return res.json();
+                    })
+                    .then(createdUser => {
+                    alert("Usuário cadastrado!");
+                    window.location.href = "/login";
+                    })
+                    .catch(err => {
+                    console.error("Falha no registro:", err);
+                    document.getElementById("error-text").innerText = "Não foi possível registrar.";
+                    });
+                
             }
 }
