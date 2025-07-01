@@ -1,0 +1,13 @@
+<%- include('./function_register_button.ejs') %>
+
+<!-- Divs para o botao Comprar estilizados para parecer um bloco de lego-->
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 30%; margin-bottom: 50px; height: auto; ">  
+                    <div id="lego_brick_top" style="display: flex; flex-direction: row; width: 100%; gap: 50px; justify-content: center;">
+                        <div class="lego_brick_top" style="background-color: <%= brickColor %>; border-color: <%= brickBorderColor %>;"></div>
+                        <div class="lego_brick_top" style="background-color: <%= brickColor %>; border-color: <%= brickBorderColor %>;"></div>
+                    </div>
+                    <div class="lego_brick_body" style="width: 100%; height: 20%; background-color: <%= brickColor %>; border-color: <%= brickBorderColor %>; padding: 0px; max-height: 20px;">
+                        <div style="display:flex; flex-direction:column; gap: 30px; ">
+                            <button class="card_button" style="background-color: <%= brickColor %>; color: <%= TextColor %>; border-color: <%= brickColor %>;" onclick="handleRegisterBrickButtonAction('<%= buttonAction %>')"><%= ButtonText %></button>
+                    </div>                  
+</div>   

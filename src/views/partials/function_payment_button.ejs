@@ -1,0 +1,17 @@
+
+<script>
+  function handleBrickButtonAction(action) {
+    switch(action) {
+      case 'back':
+        console.log("teste")
+        location.href = '/home'
+        break;
+      case 'submitForm':
+        payment(new Event('submit'));
+        break;
+      
+      default:
+        console.warn("Unknown button action:", action);
+    }
+  }
+</script>

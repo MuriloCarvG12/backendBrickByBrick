@@ -16,43 +16,30 @@
         <%- include('./partials/header.ejs') %>
 
         <!-- Header para o formulario de compras!-->
-        <%- include('./partials/page_payment_header.ejs') %>
+        <%- include('./partials/page_register_header.ejs') %>
 
-        <form id="page_payment" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <form id="page_register" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
             <!-- Formulario para compras-->
             <div class="page_payment" style="justify-content: space-evenly; width: 60%; flex-direction: column;" >
 
                 <div style="display: flex; flex-direction: column; margin-top: 40px; width: 30%">
                     <label for="Nome" style="font-family: 'Poppins'; font-weight: 500; font-size: 20px;">Digite o seu email!</label>
-                    <input name="Nome" type="text" class="purchase_input" id="purchase-email" placeholder="">
+                    <input name="Nome" type="text" class="purchase_input" id="register-Email" placeholder="">
                 </div>
 
                 <div style="display: flex; flex-direction: column; width: 30%">
-                    <label for="Nome" style="font-family: 'Poppins'; font-weight: 500; font-size: 20px;">Digite o seu CPF!</label>
-                    <input name="Nome" type="text" class="purchase_input" id="purchase-CPF" placeholder="">
+                    <label for="Nome" style="font-family: 'Poppins'; font-weight: 500; font-size: 20px;">Digite a sua senha</label>
+                    <input name="Nome" type="text" class="purchase_input" id="register-Password" placeholder="">
                 </div>
 
-                <div style="display: flex; flex-direction: column; width: 30%">
-                    <label for="Nome" style="font-family: 'Poppins'; font-weight: 500; font-size: 20px;">Digite o seu endereço</label>
-                    <input name="Nome" type="text" class="purchase_input" id="purchase-endereço" placeholder="">
-                </div>
-
-                <div style="display: flex; flex-direction: column; width: 30%;">
-                    <label for="Nome" style="font-family: 'Poppins'; font-weight: 500; font-size: 20px;">Digite a senha do seu cartão!</label>
-                    <input name="Nome" type="number" class="purchase_input" id="purchase-senha_cartao" placeholder="">
-                </div>
-
-                <div style="display: flex; flex-direction: column; margin-bottom: 40px; width: 30%">
-                    <label for="Nome" style="font-family: 'Poppins'; font-weight: 500; font-size: 20px;">Digite o código de segurança do seu cartão!</label>
-                    <input name="Nome" type="number" class="purchase_input" id="purchase-codigo-cartao" placeholder="">
-                </div>
+            </div>
 
                 <!-- Divs para o botao Comprar estilizados para parecer um bloco de lego-->
-                <%- include('./partials/payment_button', {
+                <%- include('./partials/register_button', {
                         brickColor: '#AEEF97',
                         brickBorderColor: '#27462B',
                         TextColor: '#27462B',
-                        ButtonText: 'Comprar',
+                        ButtonText: 'Criar Conta',
                         buttonAction: 'submitForm'
                 }) %>
                  
@@ -61,7 +48,7 @@
         </form>
 
         <!-- Divs para o botao Cancelar estilizados para parecer um bloco de lego-->
-        <%- include('./partials/payment_button', {
+        <%- include('./partials/register_button', {
                         brickColor: '#FF9CAB',
                         brickBorderColor: '#720000',
                         TextColor: '#720000',
@@ -78,7 +65,7 @@
 
 
     
-    <script type="module" src="/js/page_pagamento.js"></script>
+    <script type="module" src="/js/page_register.js"></script>
     
 </body>
 

@@ -1,0 +1,17 @@
+
+<script>
+  function handleRegisterBrickButtonAction(action) {
+    switch(action) {
+      case 'back':
+     
+        location.href = '/login'
+        break;
+      case 'submitForm':
+        register(new Event('submit'));
+        break;
+      
+      default:
+        console.warn("Unknown button action:", action);
+    }
+  }
+</script>
