@@ -42,13 +42,13 @@
 
         if (matchedUser) 
         {
-            // ✅ credentials valid! redirect to home (or do whatever you need).
+           
             console.log("Login successful for user:", matchedUser);
             location.href = "/home";
         } 
         else 
         {
-            // ❌ no match: show an error
+          
             document.getElementById("error-text").innerText = "Email ou Senha inválidos";
             document.getElementById("field_username").style.borderColor = "red";
             document.getElementById("field_password").style.borderColor = "red";
