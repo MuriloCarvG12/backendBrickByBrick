@@ -2,17 +2,21 @@ import { Database } from 'sqlite'; // optional but useful for typing
 import sqlite3 from 'sqlite3';
 import { Request, Response } from 'express';
 import { product_req_body } from '../interfaces/ReqBodies';
+import ProductModel from '../models/productModel';
 
 export default class ProductController {
 
-   constructor(private db: Database) {}
-    
+     private productModel: ProductModel;
+
+    constructor(db: Database) {
+        this.productModel = new ProductModel(db);
+    }
    getProducts = async (req:Request, res:Response) => 
     {
         try 
         {
-           const products_found = await this.db.all('SELECT * FROM products');
-            res.json(products_found);
+           const products = await this.productModel.getAllProducts();
+            res.json(products);
         } 
         catch (error) 
         {
@@ -25,7 +29,7 @@ export default class ProductController {
         const product_name:string = req.params.name
         try 
         {
-            const product = await this.db.get(' SELECT * FROM products WHERE name = ? LIMIT 1;', [product_name]);
+            const product = await this.productModel.getProductByName(req.params.name);
             if(!product)
                 {
                     res.status(404).json({error: 'Failed to find this product'});
@@ -44,7 +48,7 @@ export default class ProductController {
         const product_info:product_req_body = req.body
         try 
         {
-            const result = await this.db.run('INSERT INTO users (name, email) VALUES (?, ?)', [product_info.name, product_info.price, product_info.amount, product_info.image]);
+            const result = await this.productModel.registerProduct(product_info.name, product_info.price, product_info.amount, product_info.image);
             res.status(201).json({ id: result.lastID, name: product_info.name, price: product_info.price, amount: product_info.amount, image: product_info.image });
         } 
         catch (err) 
